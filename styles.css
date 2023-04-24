@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    background-color: firebrick;
+    color:antiquewhite;
+}
+
+body, select, input, .inputButton {
+    font-family: monospace;
+}
+
+header {
+    border: 3px solid goldenrod;
+    border-radius: 5px;
+    text-align: center;
+    padding-left: 40%;
+    padding-right: 40%;
+}
+
+.characterCreator {
+    flex-direction: column;
+}
+
+.attribute {
+    flex-direction: row;
+}
+
+img {
+    width: 40%;
+    border: 3px solid goldenrod;
+    border-radius: 10px;
+    margin-top: 5%
+}
+
+.inputButton {
+    background: linear-gradient(#ffd500ea, #ffffff, #ffd500ea);
+    color: firebrick;
+}

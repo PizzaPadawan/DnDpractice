@@ -19,6 +19,7 @@ header {
 }
 
 .characterCreator {
+    margin-top: 2%;
     flex-direction: column;
 }
 
@@ -36,4 +37,9 @@ img {
 .inputButton {
     background: linear-gradient(#ffd500ea, #ffffff, #ffd500ea);
     color: firebrick;
+}
+
+#equipInput {
+    display: flex;
+    flex-direction: column;
 }

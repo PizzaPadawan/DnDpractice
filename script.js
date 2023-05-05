@@ -1,21 +1,17 @@
 //Let's play DUNGEONS AND DRAGQUEENS
-
-
 //jquery practice:
 
-$( document ).ready( readyNow );
+$(readyNow);
 
 function readyNow(){
-    console.log('jq');
+    hideEquip();
+    $('#classInput').on('change', equipSelect);
+    $('#classInput').on('change', classStatAssign)
     $('#inputButton').on('click', createCharacter);
-    $('img').mouseenter(imgMouseEnter);
-    $('img').mouseleave(imgMouseLeave);
 }
 
 const character1 = {}
 const playerCharacters = []
-
-
 
 
 function createCharacter(){
@@ -28,13 +24,89 @@ function createCharacter(){
     $('#classInput').val("select class")
 }
 
-function imgMouseEnter(){
-    $(this).css('filter', 'invert(1)')
+// show all character attributes to the DOM as they're entered.
+// attach applicable stats / increases to race and class, show stats on DOM
+// as those fields are chosen.
+let charStats = [
+    {stat:"str",
+    total: 0,
+    mod: 0},
+    {stat:"dex",
+    total: 0,
+    mod: 0},
+    {stat:"con",
+    total: 0,
+    mod: 0},
+    {stat:"wis",
+    total: 0,
+    mod: 0},
+    {stat:"cha",
+    total: 0,
+    mod: 0},
+    {stat:"int",
+    total: 0,
+    mod: 0}
+];
+
+function raceStatAssign(){
+
 }
 
-function imgMouseLeave(){
-    $(this).css('filter', 'invert(0)')
+function classStatAssign(){
+    //applies different array of stat objects based on chosen class,
+    //factors in race attributes according to selected race dropdown
+    //(dwarves getting inherent +2 to constitution, for example)
+    
+    if ($('#classInput').val() === "barbarian"){ 
+        for(stat of charStats){
+            
+        }
+    }
+
+    for(stat of charStats){
+        $("#statList").append(`
+            <li>${stat.stat}: ${stat.total}
+            <ul>
+            <li>Mod: ${stat.mod}</li>
+            </ul>
+            </li>
+        `)}
 }
+
+// create a template to match equipment lists for each class
+// and import them into character object
+// ex bard:
+// character.weapon1 = selected.$(".bard").val();
+// character.weapon2 = dagger
+// character.armor = leather armor
+
+
+function hideEquip(){
+    $(".barbarian").hide();
+    $(".bard").hide();
+    $(".cleric").hide();
+    $(".druid").hide();
+    $(".fighter").hide();
+    $(".monk").hide();
+    $(".paladin").hide();
+    $(".ranger").hide();
+    $(".rogue").hide();
+    $(".sorceror").hide();
+    $(".warlock").hide();
+    $(".wizard").hide();
+}
+
+function equipSelect(){
+    const dndClass = $("#classInput").val();
+    hideEquip();
+    $(`.${dndClass}`).show();
+}
+
+//needs a function to append "required" to dropdowns of selected class
+//ONLY if that equipSelect has switched it to .show()
+
+
+
 
 //IDEAS / TO DO:
 
@@ -119,7 +191,7 @@ let d100 = {
 
 // Character sheets:
 
-const defaultStatArray = [15, 14, 13, 12, 10, 8]
+
 
 
 const mustaine = {

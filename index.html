@@ -12,7 +12,7 @@
 <body>
     <header>
         <h1>LET'S GET NERDY</h1>
-        <h3>Roll them laughin' bones...</h3>
+        <h3>Roll the dice!</h3>
     </header>
         <div class="characterCreator">
             <div class="attribute">
@@ -22,20 +22,20 @@
                 <div class="attribute">
                     <select id="raceInput" required>
                         <option selected disabled>select race</option>
-                        <option>Hill Dwarf</option>
-                        <option>Mountain Dwarf</option>
-                        <option>High Elf</option>
-                        <option>Wood Elf</option>
-                        <option>Dark Elf (Drow)</option>
-                        <option>Lightfoot Halfling</option>
-                        <option>Stout Halfling</option>
-                        <option>Human</option>
-                        <option>Dragonborn</option>
-                        <option>Forest Gnome</option>
-                        <option>Rock Gnome</option>
-                        <option>Half-Elf</option>
-                        <option>Half-Orc</option>
-                        <option>Tiefling</option>
+                        <option value="hilldwarf">Hill Dwarf</option>
+                        <option value="mtndwarf">Mountain Dwarf</option>
+                        <option value="highelf">High Elf</option>
+                        <option value="woodelf">Wood Elf</option>
+                        <option value="drow">Dark Elf (Drow)</option>
+                        <option value="lightfoot">Lightfoot Halfling</option>
+                        <option value="stouthalf">Stout Halfling</option>
+                        <option value="human">Human</option>
+                        <option value="dragonborn">Dragonborn</option>
+                        <option value="forestgnome">Forest Gnome</option>
+                        <option value="rockgnome">Rock Gnome</option>
+                        <option value="halfelf">Half-Elf</option>
+                        <option value="halforc">Half-Orc</option>
+                        <option value="tiefling">Tiefling</option>
                     </select>
                 </div>
             </label>
@@ -43,28 +43,459 @@
                 <div class="attribute">
                     <select id="classInput">
                         <option selected disabled>select class</option>
-                        <option>Barbarian</option>
-                        <option>Bard</option>
-                        <option>Cleric</option>
-                        <option>Druid</option>
-                        <option>Fighter</option>
-                        <option>Monk</option>
-                        <option>Paladin</option>
-                        <option>Ranger</option>
-                        <option>Rogue</option>
-                        <option>Sorceror</option>
-                        <option>Warlock</option>
-                        <option>Wizard</option>
+                        <option value="barbarian">Barbarian</option>
+                        <option value="bard" class="spellcaster">Bard</option>
+                        <option value="cleric" class="spellcaster">Cleric</option>
+                        <option value="druid" class="spellcaster">Druid</option>
+                        <option value="fighter">Fighter</option>
+                        <option value="monk">Monk</option>
+                        <option value="paladin" class="spellcaster">Paladin</option>
+                        <option value="ranger" class="spellcaster">Ranger</option>
+                        <option value="rogue">Rogue</option>
+                        <option value="sorceror" class="spellcaster">Sorceror</option>
+                        <option value="warlock" class="spellcaster">Warlock</option>
+                        <option value="wizard" class="spellcaster">Wizard</option>
                     </select>
                 </div>
             </label>
-            <label for="weaponInput">
-                <div class="attribute">
-                    <select id="weaponInput">
-                        <option selected disabled>select your weapon</option>
-                        <option></option>
+            <label for="equipInput">
+                <div id="equipInput">                    
+                    <select class="barbarian">
+                        <option selected disabled>select primary weapon</option>
+                        <option class=martialMelee>Greataxe (recommended)</option>
+                        <option class=martialMelee>Battleaxe</option>
+                        <option class=martialMelee>Flail</option>
+                        <option class=martialMelee>Maul</option>
+                        <option class=martialMelee>Morningstar</option>
+                        <option class=martialMelee>Warhammer</option>
+                        <option class=martialMelee>Trident</option>
                     </select>
+
+                    <select class="barbarian">
+                        <option selected disabled>select secondary weapon</option>
+                        <option class=simpleMelee>Handaxe x2 (recommended)</option>
+                        <option class=simpleMelee>Club</option>
+                        <option class=simpleMelee>Greatclub</option>
+                        <option class=simpleMelee>Light Hammer x2</option>
+                        <option class=simpleMelee>Mace</option>
+                    </select>
+
+                    <select class="bard">
+                        <option selected disabled>select weapon</option>
+                        <option class="martialMelee">Rapier (recommended)</option>
+                        <option class="martialMelee">Longsword (recommended)</option>
+                        <option class="simpleMelee">Club</option>
+                        <option class="simpleMelee">Greatclub</option>
+                        <option class="simpleMelee">Handaxe</option>
+                        <option class="simpleMelee">Javelin</option>
+                        <option class="simpleMelee">Light hammer</option>
+                        <option class="simpleMelee">Mace</option>
+                        <option class="simpleMelee">Quarterstaff</option>
+                        <option class="simpleMelee">Sickle</option>
+                        <option class="simpleMelee">Spear</option>
+                        <option class="simpleRanged">Light Crossbow</option>
+                        <option class="simpleRanged">Dart</option>
+                        <option class="simpleRanged">Shortbow</option>
+                        <option class="simpleRanged">Sling</option>
+                    </select>
+
+                    <p class="bard">Your secondary weapon will be a dagger</p>
+
+                    <select class="cleric">
+                        <option selected disabled>select primary weapon</option>
+                        <option class="simpleMelee">Mace</option>
+                        <option class="martialMelee">Warhammer</option>
+                    </select>
+
+                    <select class="cleric">
+                        <option selected disabled>select secondary weapon</option>
+                        <option class="simpleRanged">Light Crossbow (recommended)</option>
+                        <option class="simpleMelee">Club</option>
+                        <option class="simpleMelee">Dagger</option>
+                        <option class="simpleMelee">Greatclub</option>
+                        <option class="simpleMelee">Handaxe</option>
+                        <option class="simpleMelee">Javelin</option>
+                        <option class="simpleMelee">Light hammer</option>
+                        <option class="simpleMelee">Mace</option>
+                        <option class="simpleMelee">Quarterstaff</option>
+                        <option class="simpleMelee">Sickle</option>
+                        <option class="simpleMelee">Spear</option>
+                        <option class="simpleRanged">Dart</option>
+                        <option class="simpleRanged">Shortbow</option>
+                        <option class="simpleRanged">Sling</option>
+                    </select>
+
+                    <select class="cleric">
+                        <option selected disabled>select armor</option>
+                        <option class="lightArmor">Leather Armor</option>
+                        <option class="mediumArmor">Scale Mail</option>
+                        <option class="heavyArmor">Chain mail</option>
+                    </select>
+                    
+                    <select class="cleric">
+                        <option selected disabled>select shield</option>
+                        <option class="shield">Wooden shield</option>
+                        <option class="shield">Metal shield</option>
+                    </select>
+
+                    <select class="druid">
+                        <option selected disabled>select primary equip</option>
+                        <option class="shield">Wooden shield (recommended)</option>
+                        <option class="simpleMelee">Club</option>
+                        <option class="simpleMelee">Dagger</option>
+                        <option class="simpleMelee">Greatclub</option>
+                        <option class="simpleMelee">Handaxe</option>
+                        <option class="simpleMelee">Javelin</option>
+                        <option class="simpleMelee">Light hammer</option>
+                        <option class="simpleMelee">Mace</option>
+                        <option class="simpleMelee">Quarterstaff</option>
+                        <option class="simpleMelee">Sickle</option>
+                        <option class="simpleMelee">Spear</option>
+                        <option class="simpleRanged">Light Crossbow</option>
+                        <option class="simpleRanged">Dart</option>
+                        <option class="simpleRanged">Shortbow</option>
+                        <option class="simpleRanged">Sling</option>
+                    </select>
+
+                    <select class="druid">
+                        <option selected disabled>select secondary equip</option>
+                        <option class="martialMelee">Scimitar (recommended)</option> 
+                        <option class="simpleMelee">Club</option>
+                        <option class="simpleMelee">Dagger</option>
+                        <option class="simpleMelee">Greatclub</option>
+                        <option class="simpleMelee">Handaxe</option>
+                        <option class="simpleMelee">Javelin</option>
+                        <option class="simpleMelee">Light hammer</option>
+                        <option class="simpleMelee">Mace</option>
+                        <option class="simpleMelee">Quarterstaff</option>
+                        <option class="simpleMelee">Sickle</option>
+                        <option class="simpleMelee">Spear</option>
+                    </select>
+                    
+                    <select class="fighter">
+                        <option selected disabled>select primary equip</option>
+                        <option class="heavyArmor">Chain mail</option>
+                        <option class="fighterKit">Leather armor, longbow (20)</option>
+                    </select>
+
+                    <select class="fighter">
+                        <option selected disabled>select secondary equip</option>
+                        <option class="martialMelee">Battleaxe</option>
+                        <option class="martialMelee">Flail</option>
+                        <option class="martialMelee">Greataxe</option>
+                        <option class="martialMelee">Greatsword</option>
+                        <option class="martialMelee">Halberd</option>
+                        <option class="martialMelee">Lance</option>
+                        <option class="martialMelee">Longsword</option>
+                        <option class="martialMelee">Maul</option>
+                        <option class="martialMelee">Morningstar</option>
+                        <option class="martialMelee">Pike</option>
+                        <option class="martialMelee">Rapier</option>
+                        <option class="martialMelee">Scimitar</option> 
+                        <option class="martialMelee">Shortsword</option>
+                        <option class="martialMelee">Trident</option>
+                        <option class="martialMelee">War Pick</option>                     
+                        <option class="martialMelee">Warhammer</option>
+                        <option class="martialMelee">Whip</option>
+                    </select>
+
+                    <select class="fighter">
+                        <option selected disabled>select secondary equip</option>
+                        <option class="shield">Wooden shield</option>
+                        <option class="shield">Metal shield</option>
+                        <option class="martialMelee">Battleaxe</option>
+                        <option class="martialMelee">Flail</option>
+                        <option class="martialMelee">Greataxe</option>
+                        <option class="martialMelee">Greatsword</option>
+                        <option class="martialMelee">Halberd</option>
+                        <option class="martialMelee">Lance</option>
+                        <option class="martialMelee">Longsword</option>
+                        <option class="martialMelee">Maul</option>
+                        <option class="martialMelee">Morningstar</option>
+                        <option class="martialMelee">Pike</option>
+                        <option class="martialMelee">Rapier</option>
+                        <option class="martialMelee">Scimitar</option> 
+                        <option class="martialMelee">Shortsword</option>
+                        <option class="martialMelee">Trident</option>
+                        <option class="martialMelee">War Pick</option>                     
+                        <option class="martialMelee">Warhammer</option>
+                        <option class="martialMelee">Whip</option>
+                    </select>
+
+                    <select class="fighter">
+                        <option selected disabled>select tertiary equip</option>
+                        <option class="simpleRanged">Light Crossbow</option>
+                        <option class="simpleMelee">Handaxe x2</option>
+                    </select>
+
+                    <select class="monk">
+                        <option selected disabled>select primary weapon</option>
+                        <option class="martialMelee">Shortsword (recommended)</option>
+                        <option class="simpleMelee">Club</option>
+                        <option class="simpleMelee">Dagger</option>
+                        <option class="simpleMelee">Greatclub</option>
+                        <option class="simpleMelee">Handaxe</option>
+                        <option class="simpleMelee">Javelin</option>
+                        <option class="simpleMelee">Light hammer</option>
+                        <option class="simpleMelee">Mace</option>
+                        <option class="simpleMelee">Quarterstaff</option>
+                        <option class="simpleMelee">Sickle</option>
+                        <option class="simpleMelee">Spear</option>
+                    </select>
+
+                    <select class="monk">
+                        <option selected disabled>select secondary weapon</option>
+                        <option class="simpleRanged">10 Darts</option>
+                    </select>
+
+                    <select class="paladin">
+                        <option selected disabled>select primary equip</option>
+                        <option class="martialMelee">Battleaxe</option>
+                        <option class="martialMelee">Flail</option>
+                        <option class="martialMelee">Greataxe</option>
+                        <option class="martialMelee">Greatsword</option>
+                        <option class="martialMelee">Halberd</option>
+                        <option class="martialMelee">Lance</option>
+                        <option class="martialMelee">Longsword</option>
+                        <option class="martialMelee">Maul</option>
+                        <option class="martialMelee">Morningstar</option>
+                        <option class="martialMelee">Pike</option>
+                        <option class="martialMelee">Rapier</option>
+                        <option class="martialMelee">Scimitar</option> 
+                        <option class="martialMelee">Shortsword</option>
+                        <option class="martialMelee">Trident</option>
+                        <option class="martialMelee">War Pick</option>                     
+                        <option class="martialMelee">Warhammer</option>
+                        <option class="martialMelee">Whip</option>
+                    </select>
+
+                    <select class="paladin">
+                        <option selected disabled>select primary equip</option>
+                        <option class="shield">Wooden shield</option>
+                        <option class="shield">Metal shield</option>
+                        <option class="martialMelee">Battleaxe</option>
+                        <option class="martialMelee">Flail</option>
+                        <option class="martialMelee">Greataxe</option>
+                        <option class="martialMelee">Greatsword</option>
+                        <option class="martialMelee">Halberd</option>
+                        <option class="martialMelee">Lance</option>
+                        <option class="martialMelee">Longsword</option>
+                        <option class="martialMelee">Maul</option>
+                        <option class="martialMelee">Morningstar</option>
+                        <option class="martialMelee">Pike</option>
+                        <option class="martialMelee">Rapier</option>
+                        <option class="martialMelee">Scimitar</option> 
+                        <option class="martialMelee">Shortsword</option>
+                        <option class="martialMelee">Trident</option>
+                        <option class="martialMelee">War Pick</option>                     
+                        <option class="martialMelee">Warhammer</option>
+                        <option class="martialMelee">Whip</option>
+                    </select>
+
+                    <select class="paladin">
+                        <option selected disabled>select secondary equip</option>
+                        <option class="simpleMelee">5 Javelins</option>
+                        <option class="simpleMelee">Club</option>
+                        <option class="simpleMelee">Dagger</option>
+                        <option class="simpleMelee">Greatclub</option>
+                        <option class="simpleMelee">Handaxe</option>
+                        <option class="simpleMelee">Light hammer</option>
+                        <option class="simpleMelee">Mace</option>
+                        <option class="simpleMelee">Quarterstaff</option>
+                        <option class="simpleMelee">Sickle</option>
+                        <option class="simpleMelee">Spear</option>
+                    </select>
+
+                    <select class="ranger">
+                        <option selected disabled>select armor</option>
+                        <option class="mediumArmor">Scale Mail</option>
+                        <option class="lightArmor">Leather Armor</option>
+                    </select>
+
+                    <select class="ranger">
+                        <option selected disabled>select melee weapon</option>
+                        <option class="martialMelee">Shortsword (recommended)</option>
+                        <option class="simpleMelee">Club</option>
+                        <option class="simpleMelee">Dagger</option>
+                        <option class="simpleMelee">Greatclub</option>
+                        <option class="simpleMelee">Handaxe</option>
+                        <option class="simpleMelee">Javelin</option>
+                        <option class="simpleMelee">Light hammer</option>
+                        <option class="simpleMelee">Mace</option>
+                        <option class="simpleMelee">Quarterstaff</option>
+                        <option class="simpleMelee">Sickle</option>
+                        <option class="simpleMelee">Spear</option>
+                    </select>
+
+                    <select class="ranger">
+                        <option selected disabled>select melee weapon</option>
+                        <option class="martialMelee">Shortsword (recommended)</option>
+                        <option class="simpleMelee">Club</option>
+                        <option class="simpleMelee">Dagger</option>
+                        <option class="simpleMelee">Greatclub</option>
+                        <option class="simpleMelee">Handaxe</option>
+                        <option class="simpleMelee">Javelin</option>
+                        <option class="simpleMelee">Light hammer</option>
+                        <option class="simpleMelee">Mace</option>
+                        <option class="simpleMelee">Quarterstaff</option>
+                        <option class="simpleMelee">Sickle</option>
+                        <option class="simpleMelee">Spear</option>
+                    </select>
+
+                    <select class="ranger">
+                        <option selected disabled>select ranged weapon</option>
+                        <option class="martialRanged">Longbow (20)</option>
+                    </select>
+
+                    <select class="rogue">
+                        <option selected disabled>select primary weapon</option>
+                        <option class="martialMelee">Rapier</option>
+                        <option class="martialMelee">Shortsword</option>
+                    </select>
+
+                    <select class="rogue">
+                        <option selected disabled>select primary weapon</option>
+                        <option class="simpleRanged">Shortbow (20)</option>
+                        <option class="martialMelee">Shortsword</option>
+                    </select>
+
+                    <p class="rogue">Your will also receive Leather Armor and 2 Daggers.</p>
+
+                    <select class="sorceror">
+                        <option selected disabled>select primary weapon</option>
+                        <option class="simpleRanged">Light Crossbow (20)</option>
+                        <option class="simpleMelee">Club</option>
+                        <option class="simpleMelee">Dagger</option>
+                        <option class="simpleMelee">Greatclub</option>
+                        <option class="simpleMelee">Handaxe</option>
+                        <option class="simpleMelee">Javelin</option>
+                        <option class="simpleMelee">Light hammer</option>
+                        <option class="simpleMelee">Mace</option>
+                        <option class="simpleMelee">Quarterstaff</option>
+                        <option class="simpleMelee">Sickle</option>
+                        <option class="simpleMelee">Spear</option>
+                        <option class="simpleRanged">Dart</option>
+                        <option class="simpleRanged">Shortbow</option>
+                        <option class="simpleRanged">Sling</option>
+                    </select>
+
+                    <p class="sorceror">Your secondary weapon will be 2 daggers.</p>
+                    
+                    <select class="warlock">
+                        <option selected disabled>select primary weapon</option>
+                        <option class="simpleRanged">Light Crossbow (20)</option>
+                        <option class="simpleMelee">Club</option>
+                        <option class="simpleMelee">Dagger</option>
+                        <option class="simpleMelee">Greatclub</option>
+                        <option class="simpleMelee">Handaxe</option>
+                        <option class="simpleMelee">Javelin</option>
+                        <option class="simpleMelee">Light hammer</option>
+                        <option class="simpleMelee">Mace</option>
+                        <option class="simpleMelee">Quarterstaff</option>
+                        <option class="simpleMelee">Sickle</option>
+                        <option class="simpleMelee">Spear</option>
+                        <option class="simpleRanged">Dart</option>
+                        <option class="simpleRanged">Shortbow</option>
+                        <option class="simpleRanged">Sling</option>
+                    </select>
+
+                    <select class="warlock">
+                        <option selected disabled>select secondary weapon</option>
+                        <option class="simpleMelee">Club</option>
+                        <option class="simpleMelee">Dagger</option>
+                        <option class="simpleMelee">Greatclub</option>
+                        <option class="simpleMelee">Handaxe</option>
+                        <option class="simpleMelee">Javelin</option>
+                        <option class="simpleMelee">Light hammer</option>
+                        <option class="simpleMelee">Mace</option>
+                        <option class="simpleMelee">Quarterstaff</option>
+                        <option class="simpleMelee">Sickle</option>
+                        <option class="simpleMelee">Spear</option>
+                        <option class="simpleRanged">Light Crossbow</option>
+                        <option class="simpleRanged">Dart</option>
+                        <option class="simpleRanged">Shortbow</option>
+                        <option class="simpleRanged">Sling</option>
+                    </select>
+
+                    <p class="warlock">You will also receive leather armor and two daggers.</p>
+
+                    <select class="wizard">
+                        <option selected disabled>select primary weapon</option>
+                        <option class="simpleMelee">Quarterstaff</option>
+                        <option class="simpleMelee">Dagger</option>
+                    </select>
+
+                    <!-- 
+                        * * *  W E A P O N S  * * *
+
+                        <option class="simpleMelee">Club</option>
+                        <option class="simpleMelee">Dagger</option>
+                        <option class="simpleMelee">Greatclub</option>
+                        <option class="simpleMelee">Handaxe</option>
+                        <option class="simpleMelee">Javelin</option>
+                        <option class="simpleMelee">Light hammer</option>
+                        <option class="simpleMelee">Mace</option>
+                        <option class="simpleMelee">Quarterstaff</option>
+                        <option class="simpleMelee">Sickle</option>
+                        <option class="simpleMelee">Spear</option>
+
+                        <option class="simpleRanged">Light Crossbow</option>
+                        <option class="simpleRanged">Dart</option>
+                        <option class="simpleRanged">Shortbow</option>
+                        <option class="simpleRanged">Sling</option>
+
+                        <option class="martialMelee">Battleaxe</option>
+                        <option class="martialMelee">Flail</option>
+                        <option class="martialMelee">Greataxe</option>
+                        <option class="martialMelee">Greatsword</option>
+                        <option class="martialMelee">Halberd</option>
+                        <option class="martialMelee">Lance</option>
+                        <option class="martialMelee">Longsword</option>
+                        <option class="martialMelee">Maul</option>
+                        <option class="martialMelee">Morningstar</option>
+                        <option class="martialMelee">Pike</option>
+                        <option class="martialMelee">Rapier</option>
+                        <option class="martialMelee">Scimitar</option> 
+                        <option class="martialMelee">Shortsword</option>
+                        <option class="martialMelee">Trident</option>
+                        <option class="martialMelee">War Pick</option>                     
+                        <option class="martialMelee">Warhammer</option>
+                        <option class="martialMelee">Whip</option>
+
+                        <option class="martialRanged">Blowgun</option>
+                        <option class="martialRanged">Hand Crossbow</option>
+                        <option class="martialRanged">Heavy Crossbow</option>
+                        <option class="martialRanged">Longbow</option>
+                        <option class="martialRanged">Net</option>
+
+                        * * *  A R M O R  * * *
+
+                        <option class="lightArmor">Padded Armor</option>
+                        <option class="lightArmor">Leather Armor</option>
+                        <option class="lightArmor">Studded Leather Armor</option>
+
+                        <option class="mediumArmor">Hide Armor</option>
+                        <option class="mediumArmor">Chain Shirt</option>
+                        <option class="mediumArmor">Scale Mail</option>
+                        <option class="mediumArmor">Breastplate</option>
+                        <option class="mediumArmor">Half plate</option>
+
+                        <option class="heavyArmor">Ring mail</option>
+                        <option class="heavyArmor">Chain mail</option>
+                        <option class="heavyArmor">Splint</option>
+                        <option class="heavyArmor">Plate</option>
+
+                        <option class="shield">Wooden shield</option>
+                        <option class="shield">Metal shield</option>
+
+                    -->
                 </div>
+                <div class="characterUpdate">
+                    <ul id="statList">
+                        
+                    </ul>
+                </div>
+
             </label>
             <button id="inputButton" class="inputButton">Save</button>
         </div>

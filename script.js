@@ -1,14 +1,13 @@
-//Let's play DUNGEONS AND DRAGQUEENS
+//Let's play DUNGEONS AND DRAGONS
 //jquery practice:
 
-$(readyNow);
-
-function readyNow(){
+$(function (){
     hideEquip();
     $('#classInput').on('change', equipSelect);
-    $('#classInput').on('change', classStatAssign)
+    $('#raceInput').on('change', raceStatAssign);
+    // $('#classInput').on('change', classStatAssign);
     $('#inputButton').on('click', createCharacter);
-}
+})
 
 const character1 = {}
 const playerCharacters = []
@@ -27,6 +26,7 @@ function createCharacter(){
 // show all character attributes to the DOM as they're entered.
 // attach applicable stats / increases to race and class, show stats on DOM
 // as those fields are chosen.
+
 let charStats = [
     {stat:"str",
     total: 0,
@@ -49,28 +49,44 @@ let charStats = [
 ];
 
 function raceStatAssign(){
-
+    
+    if($("#raceInput").val() === "hilldwarf" || $("#raceInput").val() === "mtndwarf"){
+        charStats[2].total += 2;
+    }
+    
+    updateStatList();
 }
 
-function classStatAssign(){
-    //applies different array of stat objects based on chosen class,
-    //factors in race attributes according to selected race dropdown
-    //(dwarves getting inherent +2 to constitution, for example)
-    
-    if ($('#classInput').val() === "barbarian"){ 
-        for(stat of charStats){
-            
-        }
-    }
+//default stats = 15, 14, 13, 12, 10, 8
 
-    for(stat of charStats){
-        $("#statList").append(`
-            <li>${stat.stat}: ${stat.total}
-            <ul>
-            <li>Mod: ${stat.mod}</li>
-            </ul>
-            </li>
-        `)}
+// function classStatAssign(){
+//     //applies different array of stat objects based on chosen class,
+//     //factors in race attributes according to selected race dropdown
+//     //(dwarves getting inherent +2 to constitution, for example)
+    
+//     if ($('#classInput').val() === "barbarian"){ 
+//         for(stat of charStats){
+//             stat
+//         }
+//     }
+
+//     showStatList();
+// }
+
+
+function updateStatList(){
+     $('#strTotal').text(`${charStats[0].total}`);
+     $('#strMod').text(`${charStats[0].mod}`);
+     $('#dexTotal').text(`${charStats[1].total}`);
+     $('#dexMod').text(`${charStats[1].mod}`);
+     $('#conTotal').text(`${charStats[2].total}`);
+     $('#conMod').text(`${charStats[2].mod}`);
+     $('#wisTotal').text(`${charStats[3].total}`);
+     $('#wisMod').text(`${charStats[3].mod}`);
+     $('#chaTotal').text(`${charStats[4].total}`);
+     $('#chaMod').text(`${charStats[4].mod}`);
+     $('#intTotal').text(`${charStats[5].total}`);
+     $('#intMod').text(`${charStats[5].mod}`);
 }
 
 // create a template to match equipment lists for each class
